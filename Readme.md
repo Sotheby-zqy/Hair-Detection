@@ -12,10 +12,11 @@
 - 头发特征：每张含3根及以上3~15cm的黑/深棕色头发，部分弯曲、与食品边缘重叠
 - 数据增强：通过旋转、缩放、添加高斯噪声解决样本量少的问题，提升模型鲁棒性
 展示如下：
-![数据样例1](images/dataset/origin_img1.bmp)
-![数据样例2](images/dataset/origin_img2.bmp)
-![数据样例3](images/dataset/origin_img3.bmp)
-
+<div align="center">
+  <img src="images/dataset/origin_img1.bmp" width="30%" alt="数据样例1"/>
+  <img src="images/dataset/origin_img2.bmp" width="30%" alt="数据样例2"/>
+  <img src="images/dataset/origin_img3.bmp" width="30%" alt="数据样例3"/>
+</div>
 
 ## 核心算法：Frangi血管检测滤波器
 Frangi滤波器是基于**Hessian矩阵**的多尺度管状结构增强算法，最初用于医学影像血管/神经检测，其核心是通过分析像素点Hessian矩阵的特征值，判断区域是否为管状结构，对管状结构赋予高权重、背景/其他结构低权重，实现细长结构增强。
@@ -51,23 +52,34 @@ Frangi滤波器是基于**Hessian矩阵**的多尺度管状结构增强算法，
 
 ### 加工步骤可视化
 下面以样本1为例战术代码中对图像加工的效果
-![初始图像](images/process/1.png)
-![灰度化](images/process/2.png)
-![高斯滤波去噪后](images/process/3.png)
-![Frangi管状增强](images/process/4.png)
-![增强后二值化](images/process/5.png)
-![形态学梯度增强](images/process/6.png)
-![Canny边缘检测](images/process/7.png)
-![Frangi与Canny特征融合](images/process/8.png)
-![闭运算后二值图](images/process/9.png)
-![开运算后二值图](images/process/10.png)
-![轮廓筛选后结果](images/process/11.png)
+<div align="center">
+  <img src="images/process/1.png" width="30%" alt="初始图像"/>
+  <img src="images/process/2.png" width="30%" alt="灰度化"/>
+  <img src="images/process/3.png" width="30%" alt="高斯滤波去噪后"/>
+</div>
+<div align="center">
+  <img src="images/process/4.png" width="30%" alt="Frangi管状增强"/>
+  <img src="images/process/5.png" width="30%" alt="增强后二值化"/>
+  <img src="images/process/6.png" width="30%" alt="形态学梯度增强"/>
+</div>
+<div align="center">
+  <img src="images/process/7.png" width="30%" alt="Canny边缘检测"/>
+  <img src="images/process/8.png" width="30%" alt="Frangi与Canny特征融合"/>
+  <img src="images/process/9.png" width="30%" alt="闭运算后二值图"/>
+</div>
+<div align="center">
+  <img src="images/process/10.png" width="30%" alt="开运算后二值图"/>
+  <img src="images/process/11.png" width="30%" alt="轮廓筛选后结果"/>
+</div>
 
 ### 结果可视化
 <!-- 插入检测结果对比图，示例：原始图像-处理后图像对比 -->
-![样本1检测结果](images/result/result1.png)
-![样本2检测结果](images/result/result2.png)
-![样本3检测结果](images/result/result3.png)
+
+<div align="center">
+  <img src="images/result/result1.png" width="30%" alt="样本1检测结果"/>
+  <img src="images/result/result2.png" width="30%" alt="样本2检测结果"/>
+  <img src="images/result/result3.png" width="30%" alt="样本3检测结果"/>
+</div>
 
 **实验结论**：该方法对细弱、低对比度发丝的检测精度优于传统边缘检测算法，处理流程计算复杂度适中，可在常规硬件稳定运行。
 
